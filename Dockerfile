@@ -4,7 +4,6 @@ MAINTAINER Liam Martens (hi@liammartens.com)
 # install phalcon
 RUN apk add --update php$PHPV-dev make autoconf \
             gcc pcre-dev git g++ alpine-sdk
-RUN ln -s /usr/bin/php7 /usr/bin/php
 RUN git clone --single-branch git://github.com/phalcon/cphalcon
 RUN cd cphalcon/build && ./install
 RUN apk del php$PHPV-dev make autoconf \

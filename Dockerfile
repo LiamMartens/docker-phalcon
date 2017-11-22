@@ -1,5 +1,5 @@
 FROM liammartens/php
-MAINTAINER Liam Martens (hi@liammartens.com)
+LABEL "maintainer=Liam Martens (hi@liammartens.com)"
 
 # install phalcon
 RUN apk add --update php$PHPV-dev make autoconf \
@@ -10,4 +10,4 @@ RUN apk del php$PHPV-dev make autoconf \
             gcc pcre-dev g++ alpine-sdk &&\
             rm -rf cphalcon
 
-ENTRYPOINT ["/home/www-data/run.sh", "su", "-m", "www-data", "-c", "/home/www-data/continue.sh /bin/sh"]
+ENTRYPOINT ["/home/www-data/run.sh", "su", "-m", "www-data", "-c", "/home/www-data/continue.sh"]

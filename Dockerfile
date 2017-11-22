@@ -1,5 +1,5 @@
 FROM liammartens/php
-LABEL "maintainer=Liam Martens (hi@liammartens.com)"
+LABEL maintainer="Liam Martens (hi@liammartens.com)"
 
 # install phalcon
 RUN apk add --update php$PHPV-dev make autoconf \

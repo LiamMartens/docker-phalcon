@@ -14,3 +14,6 @@ RUN apk del php${PHPV}-dev make autoconf gcc pcre-dev g++ alpine-sdk && \
 
 # @user Back to non-root user
 USER ${USER}
+
+# @copy copy additional config
+COPY conf/ /etc/php${PHPV}/

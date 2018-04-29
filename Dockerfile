@@ -12,8 +12,11 @@ RUN cd cphalcon/build && ./install
 RUN apk del php${PHPV}-dev make autoconf gcc pcre-dev g++ alpine-sdk && \
     rm -rf cphalcon
 
+# @copy files
+COPY .docker ${DOCKER_DIR}/
+
+# @run own it
+RUN own
+
 # @user Back to non-root user
 USER ${USER}
-
-# @copy copy additional config
-COPY conf/ /etc/php${PHPV}/
